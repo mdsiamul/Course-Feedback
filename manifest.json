@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "AutoCourse Feedback",
+  "description": "Opens course evaluations and auto-fills feedback forms.",
+  "author": "Md Siamul Islam (ID: 230032201, Department: TVE)",
+  "version": "1.0.0",
+  "permissions": [
+    "tabs",
+    "scripting",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icons/icons.png",
+    "32": "icons/icons.png",
+    "48": "icons/icons.png",
+    "128": "icons/icons.png"
+  },
+  "action": {
+    "default_title": "AutoCourse Feedback",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icons.png",
+      "32": "icons/icons.png",
+      "48": "icons/icons.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
